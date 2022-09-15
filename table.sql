@@ -1,7 +1,7 @@
 
 CREATE TABLE Files
 (
-   file_name VARCHAR ( 255 ) NOT NULL,
+   file_name VARCHAR ( 255 ) UNIQUE NOT NULL,
    file_id SERIAL,
    PRIMARY KEY (file_id)
 );
