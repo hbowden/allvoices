@@ -45,6 +45,11 @@ export async function saveCsv(file: Express.Multer.File, rows: any[]) {
         }
 
         await conn.query('COMMIT');
+
+       fs.unlink(file.path, () => {
+        return;
+       })
+
       } catch (e) {
         await conn.query('ROLLBACK');
         throw e
